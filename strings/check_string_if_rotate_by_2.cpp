@@ -1,4 +1,4 @@
-//* String can be rotated by 2 element - clockwise or anticlockwise
+//* String can be rotated by 2 position - clockwise or anticlockwise
 
 #include <iostream>
 using namespace std;
