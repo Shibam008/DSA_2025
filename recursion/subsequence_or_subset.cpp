@@ -26,19 +26,43 @@ void subsequence(vector<int>arr, int idx, int n, vector<int>&temp, vector<vector
     temp.pop_back();
 }
 
+void subsequence(string str, int idx, int n, string &temp, vector<string>&ans) {
+
+    if(idx == n) {
+        ans.push_back(temp);
+        return;
+    }
+    // exclude
+    subsequence(str, idx+1, n, temp, ans);
+    // include
+    temp.push_back(str[idx]);
+    subsequence(str, idx+1, n, temp, ans);
+    temp.pop_back();
+}
 
 int main() {
-    vector<int> num = {1, 2, 3};
-    vector<vector<int>> ans;
-    vector<int>temp;
+    // vector<int> num = {1, 2, 3};
+    // vector<vector<int>> ans;
+    // vector<int>temp;
 
-    subsequence(num, 0, num.size(), temp, ans);
+    // subsequence(num, 0, num.size(), temp, ans);
 
-    for(vector<int> subset: ans) {
-        for(int val: subset) {
-            cout << val << " ";
-        }
-        cout << endl;
+    // for(vector<int> subset: ans) {
+    //     for(int val: subset) {
+    //         cout << val << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    string str = "abcd";
+    string temp;
+    vector<string> ans;
+
+    subsequence(str, 0, str.length(), temp, ans);
+
+    for(string str: ans) {
+        cout << str << endl;
     }
+
     return 0;
 }
