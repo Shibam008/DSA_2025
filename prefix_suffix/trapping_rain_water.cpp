@@ -84,7 +84,7 @@ int main()
 {
     vector<int> heights = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
     //int water = expectedApproach(heights);
-    int water = expectedApproach(heights);
+    int water = optimalSolution(heights);
 
     cout << water;
     return 0;
